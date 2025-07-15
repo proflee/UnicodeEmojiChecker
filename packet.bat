@@ -7,6 +7,5 @@ pyinstaller --onefile --windowed ^
     --hidden-import=config ^
     --hidden-import=utils ^
     --hidden-import=gui ^
-    --hidden-import=unicode_checker ^
     --version-file=version_info.txt ^
     main.py
