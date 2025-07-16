@@ -111,7 +111,10 @@ class UnicodeCheckerWindow(QMainWindow):
         self.table_model.setHorizontalHeaderLabels(["Unicode 版本", "字符", "支持状态", "名称", "发布日期"])
         
         self.table_view.setModel(self.table_model)
-        self.table_view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+        # 优化表格展示：使用Stretch模式使表格均匀伸展满界面
+        header = self.table_view.horizontalHeader()
+        # 修改为：所有列均匀拉伸
+        header.setSectionResizeMode(QHeaderView.Stretch)  # 所有列均匀拉伸
         
         test_layout.addWidget(self.table_view)
         test_frame.setLayout(test_layout)
